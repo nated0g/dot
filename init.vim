@@ -1,0 +1,1 @@
+/home/nated0g/.config/nvim/init.vim
