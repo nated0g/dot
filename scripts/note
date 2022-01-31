@@ -1,0 +1,22 @@
+#!/bin/bash
+
+notepath="$HOME/notes"
+note="$notepath/$(date -I).md"
+title="${*:1}"
+
+if [ ! -f $note ]; then
+	touch $note
+	printf "## %s\n\n" "$(date -I)" >> $note
+fi
+
+if [ ! -z "$title" ]; then
+	printf "### **%s**\n" "$title" >> $note
+fi
+
+printf "#### %s\n\n" "$(date +'%T')" >> $note
+
+vim "+normal G$" +startinsert $note
+
+git -C "$notepath" add .
+git -C "$notepath" commit -m "$title"
+git -C "$notepath" push origin master

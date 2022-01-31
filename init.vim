@@ -1,4 +1,4 @@
-" *********************************
+"*********************************
 " Vim-Plug 
 " *********************************
 
@@ -49,6 +49,7 @@ set hidden
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
+"let g:user_emmet_leader_key=" "
 
 " New buffer
 nmap <leader>nb :enew<cr> 

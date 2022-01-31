@@ -116,3 +116,5 @@ alias '?'="duck"
 alias vic="vim ~/.config/nvim/init.vim"
 alias zrc="vim ~/.zshrc"
 alias szrc="source ~/.zshrc"
+
+alias note="vim $HOME/notes/$(date -I).md"
