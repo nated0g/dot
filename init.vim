@@ -6,8 +6,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
-
+Plug 'ayu-theme/ayu-vim' " or other package manager
 call plug#end()
+
+set termguicolors     " enable true colors support
+let ayucolor="mirage" " for mirage version of theme
+colorscheme ayu
 
 set number relativenumber
 set mouse=a
