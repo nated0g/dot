@@ -20,6 +20,7 @@ nnoremap <leader>oib :silent !explorer.exe %<CR> "Open In Browser
 
 nnoremap <leader>h :tabp<CR> " previous tab
 nnoremap <leader>l :tabn<CR> " next tab
+nnoremap <leader>nt :tabnew<CR> " new tab
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
