@@ -1,9 +1,10 @@
 #!/bin/bash
 
 notepath="$HOME/notes"
-note="$notepath/$(date -I).md"
+note="${notepath}/$(date -I).md"
 title="${*:1}"
 
+echo $note
 if [ ! -f $note ]; then
 	touch $note
 	printf "## %s\n\n" "$(date -I)" >> $note
