@@ -1,3 +1,7 @@
+" *********************************
+" Vim-Plug 
+" *********************************
+
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
@@ -7,16 +11,26 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
-Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'ayu-theme/ayu-vim' 
 call plug#end()
 
-" Theming
+
+" *********************************
+" Theming 
+" *********************************
 
 set termguicolors     " enable true colors support
-"let ayucolor="light" " for mirage version of theme
-let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark" " for mirage version of theme
+"let ayucolor="light" 
+let ayucolor="mirage"
+"let ayucolor="dark" 
 colorscheme ayu
+
+set number relativenumber
+
+
+" *********************************
+" Buffers/Tabs 
+" *********************************
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -28,18 +42,21 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 
+
+" *********************************
+" Keymapping 
+" *********************************
+
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+" New buffer
+nmap <leader>nb :enew<cr> 
 
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
-nmap <leader>nb :enew<cr>
-
-" Move to the next buffer
+" Next buffer
 nmap <leader>l :bnext<CR>
 
-" Move to the previous buffer
+" Previous buffer
 nmap <leader>h :bprevious<CR>
 
 " Close the current buffer and move to the previous one
@@ -49,16 +66,18 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
-set number relativenumber
-set mouse=a
-
+" Source vim config
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>oib :silent !explorer.exe %<CR> "Open In Browser
 
-" Not really the correct way to use tabs, change to using buffers instead
-"nnoremap <leader>h :tabp<CR> " previous tab
-"nnoremap <leader>l :tabn<CR> " next tab
-"nnoremap <leader>nt :tabnew<CR> " new tab
+" Open In Browser
+nnoremap <leader>oib :silent !explorer.exe %<CR> 
+
+
+" *********************************
+" Misc. 
+" *********************************
+
+set mouse=a
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
