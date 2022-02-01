@@ -18,6 +18,10 @@ printf "#### %s\n\n" "$(date +'%T')" >> $note
 
 vim "+normal G$" +startinsert $note
 
-git -C "$notepath" add .
-git -C "$notepath" commit -m "$title"
-git -C "$notepath" push origin master
+read -p "Commit? [y/N]: " do_commit
+
+if [ "${do_commit,,}" = "y" ]; then
+	git -C "$notepath" add .
+	git -C "$notepath" commit -m "$title"
+	git -C "$notepath" push origin master
+fi

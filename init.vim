@@ -11,7 +11,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
-Plug 'ayu-theme/ayu-vim' 
+"Plug 'ayu-theme/ayu-vim' 
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 
@@ -19,14 +20,15 @@ call plug#end()
 " Theming 
 " *********************************
 
-set termguicolors     " enable true colors support
+"set termguicolors     " enable true colors support
 "let ayucolor="light" 
-let ayucolor="mirage"
+"let ayucolor="mirage"
 "let ayucolor="dark" 
-colorscheme ayu
+"colorscheme ayu
+colorscheme nord
 
 set number relativenumber
-
+set cursorline
 
 " *********************************
 " Buffers/Tabs 

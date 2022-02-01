@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Enter something"
+read something
+echo "$something $something"
