@@ -13,6 +13,8 @@ Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
 "Plug 'ayu-theme/ayu-vim' 
 Plug 'arcticicestudio/nord-vim'
+Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
+
 call plug#end()
 
 
