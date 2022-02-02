@@ -75,7 +75,7 @@ nmap <leader>bl :ls<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 " Open In Browser
-nnoremap <leader>oib :silent !explorer.exe %<CR> 
+nnoremap <silent> <leader>oib :!wslview %<CR> | :redraw!
 
 
 " *********************************
