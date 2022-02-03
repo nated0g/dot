@@ -10,6 +10,8 @@ if [ ! -f $note ]; then
 	printf "## %s\n\n" "$(date -I)" >> $note
 fi
 
+printf "\n"
+
 if [ ! -z "$title" ]; then
 	printf "### **%s**\n" "$title" >> $note
 fi

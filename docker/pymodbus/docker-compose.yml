@@ -1,0 +1,21 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  pymodbus-server:
+    hostname: server
+    build: pymodbus-server/.
+    ports:
+      - "502/tcp"
+    restart: always
+    networks:
+      - pymodbus
+  pymodbus-repl:
+    build: pymodbus-repl/.
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      - pymodbus
+    depends_on:
+      - "pymodbus-server"
+networks:
+    pymodbus:
