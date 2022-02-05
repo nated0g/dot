@@ -18,6 +18,9 @@ Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 call plug#end()
 
 
+
+
+
 " *********************************
 " Theming 
 " *********************************
@@ -77,11 +80,39 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 " Open In Browser
 nnoremap <silent> <leader>oib :!wslview %<CR> | :redraw!
 
+" Easier navigation of splits
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+"
+" Wrap visual selection in an HTML tag.
+vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
+function! VisualHTMLTagWrap()
+  let tag = input("Tag to wrap block: ")
+  if len(tag) > 0
+    normal `>
+    if &selection == 'exclusive'
+      exe "normal i</".tag.">"
+    else
+      exe "normal a</".tag.">"
+    endif
+    normal `<
+    exe "normal i<".tag.">"
+    normal `<
+  endif
+endfunction
+
+
+
 
 " *********************************
 " Misc. 
 " *********************************
 
+set ttymouse=xterm2
 set mouse=a
 
 " WSL yank support
