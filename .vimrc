@@ -14,7 +14,7 @@ Plug 'Raimondi/delimitMate'
 "Plug 'ayu-theme/ayu-vim' 
 Plug 'arcticicestudio/nord-vim'
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
-
+Plug 'roman/golden-ratio'
 call plug#end()
 
 
