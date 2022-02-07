@@ -15,6 +15,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 Plug 'roman/golden-ratio'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 call plug#end()
 
 
@@ -80,6 +82,9 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 " Open In Browser
 nnoremap <silent> <leader>oib :!wslview %<CR> | :redraw!
 
+" Markdown Preview
+nmap <leader>mp :MarkdownPreview<CR>
+
 " Easier navigation of splits
 
 map <C-j> <C-W>j
@@ -91,36 +96,45 @@ map <C-l> <C-W>l
 " Wrap visual selection in an HTML tag.
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
 function! VisualHTMLTagWrap()
-  let tag = input("Tag to wrap block: ")
-  if len(tag) > 0
-    normal `>
-    if &selection == 'exclusive'
-      exe "normal i</".tag.">"
-    else
-      exe "normal a</".tag.">"
-    endif
-    normal `<
-    exe "normal i<".tag.">"
-    normal `<
-  endif
+	let tag = input("Tag to wrap block: ")
+	if len(tag) > 0
+		normal `>
+		if &selection == 'exclusive'
+			exe "normal i</".tag.">"
+		else
+			exe "normal a</".tag.">"
+		endif
+		normal `<
+		exe "normal i<".tag.">"
+		normal `<
+	endif
 endfunction
 
+" fix indentation 
+nnoremap <leader>fi gg=G<CR> 
 
-
+" run "go test"
+nnoremap <leader>gt :!go test<CR>
 
 " *********************************
 " Misc. 
 " *********************************
 
+" use ripgrep for grep
+" from https://phelipetls.github.io/posts/extending-vim-with-ripgrep/
+if executable("rg")
+	set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+	set grepformat=%f:%l:%c:%m
+endif
 set ttymouse=xterm2
 set mouse=a
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
+	augroup WSLYank
+		autocmd!
+		autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+	augroup END
 endif
 
