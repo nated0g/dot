@@ -19,7 +19,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 call plug#end()
 
-
+let g:netrw_altv=1
 
 
 
