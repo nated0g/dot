@@ -16,12 +16,13 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 Plug 'roman/golden-ratio'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
+Plug 'dpelle/vim-LanguageTool'
 call plug#end()
 
 let g:netrw_altv=1
 
 
+let g:languagetool_jar="/usr/local/LanguageTool-5.6-stable/languagetool-commandline.jar"
 
 " *********************************
 " Theming 
@@ -80,7 +81,7 @@ nmap <leader>bl :ls<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 " Open In Browser
-nnoremap <silent> <leader>oib :!wslview %<CR> | :redraw!
+nnoremap <leader>oib :!wslview %<CR> | :redraw!
 
 " Markdown Preview
 nmap <leader>mp :MarkdownPreview<CR>
