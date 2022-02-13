@@ -87,7 +87,12 @@ nmap <leader>bl :ls<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 
 " Open In Browser
-nnoremap <leader>oib :!wslview %<CR> | :redraw!
+" nnoremap <leader>oib :!wslview %<CR> | :redraw!
+
+" Open In Browser, better version that starts a live-server in the current
+" directory, outputting server log to tmux split
+" sudo npm install -g live-server 
+nnoremap <leader>oib :silent !tmux split-window -l 4 "live-server --browser=wslview"<CR> | :redraw!
 
 " Markdown Preview
 nmap <leader>mp :MarkdownPreview<CR>
