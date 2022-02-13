@@ -1,7 +1,16 @@
 #!/bin/sh
 
-# Vim
+# vim
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-mkdir "$HOME/.vim/" "$HOME/.vim/autoload"
-ln -sf "$PWD/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"
 
+# zsh
+ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
+
+# tmux
+ln -sf "$PWD/tmux/.tmux.conf" "$HOME/.tmux.conf"
+
+sudo apt install build-essential cmake python3.8-dev -y
+
+n-install
+
+npm install -g live-server 
