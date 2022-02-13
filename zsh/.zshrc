@@ -2,7 +2,7 @@
 export PATH=:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 
-export TERM="xterm"
+export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 

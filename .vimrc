@@ -128,9 +128,15 @@ nnoremap <leader>fi gg=G<CR>
 " run "go test"
 nnoremap <leader>gt :!go test<CR>
 
+" redraw 
+nnoremap <leader>rd :redraw!<CR>
+
 " *********************************
 " Misc. 
 " *********************************
+
+" clear after exit
+au VimLeave * :!clear
 
 " use ripgrep for grep
 " from https://phelipetls.github.io/posts/extending-vim-with-ripgrep/
