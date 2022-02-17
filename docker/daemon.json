@@ -1,3 +1,0 @@
-{
-  "hosts": ["unix:///mnt/wsl/shared-docker/docker.sock"]
-}
