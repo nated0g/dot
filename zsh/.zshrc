@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -87,7 +86,7 @@ compinit -i
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 
 export VISUAL=vim
@@ -120,4 +119,9 @@ alias zrc="vim ~/.zshrc"
 alias szrc="source ~/.zshrc"
 alias scim="sc-im"
 
+alias dot="cd ~/dot"
+
+alias idf='. $HOME/esp/esp-idf/export.sh'
+
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+

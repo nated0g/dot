@@ -14,3 +14,7 @@ sudo apt install build-essential cmake python3.8-dev ripgrep -y
 n-install
 
 npm install -g live-server 
+
+# Install Windows Applications
+powershell.exe -File ./setup-windows.ps1
+

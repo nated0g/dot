@@ -23,10 +23,14 @@ Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
 Plug 'roman/golden-ratio'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dpelle/vim-LanguageTool'
+Plug 'dense-analysis/ale'
+Plug 'pprovost/vim-ps1'
+
 call plug#end()
 
 let g:netrw_altv=1
 
+let g:ale_fixers = {'css': ['prettier']}
 
 let g:languagetool_jar="/usr/local/LanguageTool-5.6-stable/languagetool-commandline.jar"
 
@@ -84,7 +88,7 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
 " Source vim config
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Open In Browser
 " nnoremap <leader>oib :!wslview %<CR> | :redraw!
@@ -130,6 +134,11 @@ nnoremap <leader>gt :!go test<CR>
 
 " redraw 
 nnoremap <leader>rd :redraw!<CR>
+
+" splits
+
+nnoremap <leader>vs :vsp<CR>
+nnoremap <leader>hs :sp<CR>
 
 " *********************************
 " Misc. 

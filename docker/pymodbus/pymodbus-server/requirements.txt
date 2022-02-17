@@ -1,2 +1,0 @@
-pymodbus
-pymodbus[twisted]
