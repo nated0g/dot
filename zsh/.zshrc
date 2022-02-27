@@ -5,6 +5,7 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export PAGER="most"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -78,6 +79,9 @@ plugins=(git gh sudo golang docker docker-compose taskwarrior)
 
 source $ZSH/oh-my-zsh.sh
 
+# Scripts
+. ~/dot/scripts/complete_npx.sh
+
 # User configuration
 
 autoload -U compinit
@@ -111,6 +115,8 @@ export EDITOR="$VISUAL"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias newrepl="wslview https://repl.new"
+
 #alias {vi,vim}="nvim"
 alias lynx="lynx -vikeys"
 alias '?'="duck"
@@ -125,3 +131,9 @@ alias idf='. $HOME/esp/esp-idf/export.sh'
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
+
+if [ -e /home/nated0g/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nated0g/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+alias rmzi="rm ~/**/*Zone.Identifier"
+
+alias sqlz="npx sequelize"

@@ -20,7 +20,7 @@ Plug 'Raimondi/delimitMate'
 "Plug 'ayu-theme/ayu-vim' 
 Plug 'arcticicestudio/nord-vim'
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py'}
-Plug 'roman/golden-ratio'
+"Plug 'roman/golden-ratio'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dpelle/vim-LanguageTool'
 Plug 'dense-analysis/ale'
@@ -144,6 +144,7 @@ nnoremap <leader>hs :sp<CR>
 " Misc. 
 " *********************************
 
+
 " clear after exit
 au VimLeave * :!clear
 
@@ -156,6 +157,10 @@ endif
 
 set ttymouse=xterm2
 set mouse=a
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point

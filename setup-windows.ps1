@@ -39,6 +39,9 @@ $pkgs += "Prusa3D.PrusaSlicer"
 # Security
 $pkgs += "Malwarebytes.Malwarebytes"
 
+# Learning
+$pkgs += "Anki.Anki"
+
 Foreach ($pkg in $pkgs) {
 
 	$listOutput = winget list $pkg 

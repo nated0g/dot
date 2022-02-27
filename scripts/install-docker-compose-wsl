@@ -1,0 +1,9 @@
+cd /tmp
+mkdir dc-work
+cd dc-work
+curl -o docker-compose -kL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64
+chmod +x docker-compose
+mkdir -p ~/.docker/cli-plugins/
+mv docker-compose ~/.docker/cli-plugins/
+cd ..
+rmdir dc-work
