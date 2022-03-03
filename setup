@@ -9,12 +9,14 @@ ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
 # tmux
 ln -sf "$PWD/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
+exec scripts/install-zsh
+
 sudo apt install build-essential cmake python3.8-dev ripgrep -y
 
 n-install
 
-npm install -g live-server 
+#npm install -g live-server 
 
 # Install Windows Applications
-powershell.exe -File ./setup-windows.ps1
+# powershell.exe -File ./setup-windows.ps1
 
