@@ -45,7 +45,7 @@ let g:languagetool_jar="/usr/local/LanguageTool-5.6-stable/languagetool-commandl
 "colorscheme ayu
 colorscheme nord
 
-set number relativenumber
+set number 
 set cursorline
 
 " *********************************
