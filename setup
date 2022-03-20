@@ -5,9 +5,11 @@ ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 
 # zsh
 ln -sf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
+ln -sf "$PWD/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # tmux
 ln -sf "$PWD/tmux/.tmux.conf" "$HOME/.tmux.conf"
+
 
 exec scripts/install-zsh
 
